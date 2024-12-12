@@ -1,0 +1,14 @@
+The following CSS code snippet demonstrates an uncommon error where the `:visited` pseudo-class selector does not work as expected when using `background-image` property with a gradient.  The gradient appears for the first click, but subsequent clicks on the link won't change the background image.  This is because the `:visited` pseudo-class has a high specificity and the browser might prioritize it over the initially applied style, not updating the gradient on subsequent visits.
+
+```css
+a {
+  background-image: linear-gradient(to right, blue, green);
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+a:visited {
+  background-image: linear-gradient(to right, red, yellow);
+  color: black;
+}
+```
