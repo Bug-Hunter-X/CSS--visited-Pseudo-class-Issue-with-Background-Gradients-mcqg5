@@ -1,0 +1,16 @@
+To solve this uncommon issue, we can use the `!important` flag to give the `:visited` style higher precedence:
+
+```css
+a {
+  background-image: linear-gradient(to right, blue, green);
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+a:visited {
+  background-image: linear-gradient(to right, red, yellow) !important;
+  color: black !important;
+}
+```
+
+Using `!important` forces the browser to apply the `:visited` style, overriding any potential conflicts with the initial style. Note that overusing `!important` is generally discouraged, but in this specific scenario, it provides a reliable solution to an uncommon CSS quirk.
